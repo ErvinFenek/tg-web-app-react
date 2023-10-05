@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './App.css';
 import {useEffect} from "react";
 import {useTelegram} from "./hooks/useTelegram";
@@ -19,7 +21,7 @@ function App() {
         <Header/>
         <Routes>
             <Route index element={<ProductList/>}/>
-            <Route path={'form'} element={<Form/>}/>
+            <Route path={'/form'} element={<Form/>}/>
         </Routes>
     </div>
   );
