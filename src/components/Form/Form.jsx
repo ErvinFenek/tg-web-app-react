@@ -3,6 +3,8 @@ import "./Form.css";
 import {useTelegram} from "../../hooks/useTelegram";
 
 const Form = () => {
+    const [tg] = useTelegram();
+
     const [country, setCountry] = useState("");
     const [city, setCity] = useState("");
     const [street, setStreet] = useState("");
