@@ -22,18 +22,21 @@ const getTotalPrice = (items) => {
 }
 
 const ProductList = () => {
-    const [addItems, setAddItems] = useState([]);
+    const [addedItems, setAddedItems] = useState([]);
     const {tg} = useTelegram();
 
-    const onAdd = () => {
+    const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
 
         if(alreadyAdded) {
-            newItems = addItems.filter(item => item.id !== product.id)
+            newItems = addedItems.filter(item => item.id !== product.id)
         } else {
             newItems = [...addedItems, product]
         }
+
+        setAddedItems(newItems);
+
         if (newItems.length === 0 ) {
             tg.MainButton.hide();
         } else {
