@@ -12,7 +12,10 @@ const Form = () => {
 
     const onSendData = useCallback(() => {
         const data = {
-
+            country,
+            city,
+            street,
+            subject
         }
         tg.sendData(JSON.stringify(data))
     })
